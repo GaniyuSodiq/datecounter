@@ -6,13 +6,11 @@ function App() {
   // STATE
   const [step, setStep] = useState(1);
   const [count, setCount] = useState(0);
-
   // DATE
   let today = new Date();
   let date = new Date(
     new Date(today).setDate(today.getDate() + count)
   ).toDateString();
-
   // BUTTONS FUNCTIONS
   function incraseStep() {
     setStep((s) => s + 1);
@@ -20,14 +18,12 @@ function App() {
   function decreaseStep() {
     setStep((s) => s - 1);
   }
-
   function incraseCount() {
     setCount((c) => c + step);
   }
   function decreaseCount() {
     setCount((c) => c - step);
   }
-
   return (
     <div className="App">
       <div className="step">
@@ -41,7 +37,9 @@ function App() {
         <span>Count: {count}</span>
         <button onClick={incraseCount}>+</button>
       </div>
-      <span>{date}</span>
+      <span>
+        {count} days from today is {date}
+      </span>
     </div>
   );
 }
@@ -60,7 +58,6 @@ export default App;
 //       prescription.prescriptionExpirationDate
 //   )
 // ).toDateString();
-
 // console.log(date); // 7 days from today
 // ///// DATE COPY
 //// DATE COPY
